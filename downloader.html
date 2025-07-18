@@ -5,7 +5,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="monetag" content="96796ec2b7579da091d8e057589b73f5">
+  
   <title>Daunne Agro Farm</title>
   <style>
     body {
@@ -204,13 +204,13 @@
     const getLinkDiv = document.getElementById("getLinkDiv");
 
     window.onload = function () {
-      countdownEl.textContent = `⏳ Please wait ${countdown} seconds...`;
+      countdownEl.textContent = `⏳ Please wait ${countdown} seconds.`;
       const timer = setInterval(() => {
         countdown--;
-        countdownEl.textContent = `⏳ Please wait ${countdown} seconds...`;
+        countdownEl.textContent = `⏳ Please wait ${countdown} seconds.`;
         if (countdown <= 0) {
           clearInterval(timer);
-          countdownEl.textContent = '✅ Click the button below to continue';
+          countdownEl.textContent = 'Click the button below to continue';
           getLinkDiv.classList.remove("hidden");
         }
       }, 1000);
