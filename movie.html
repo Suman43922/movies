@@ -82,11 +82,11 @@
       }
 
       document.getElementById("countdownBox").classList.remove("hidden");
-      document.getElementById("countdown").textContent = `⏳ Generating link, please wait ${countdown} seconds.`;
+      document.getElementById("countdown").textContent = `⏳ Please wait ${countdown} seconds.`;
 
       const timer = setInterval(() => {
         countdown--;
-        document.getElementById("countdown").textContent = `⏳ Generating link, please wait ${countdown} seconds.`;
+        document.getElementById("countdown").textContent = `⏳ Please wait ${countdown} seconds.`;
         if (countdown <= 0) {
           clearInterval(timer);
           document.getElementById("countdown").textContent = 'Link ready!';
