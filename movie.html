@@ -63,11 +63,11 @@
   </div>
 
   <div class="box hidden" id="countdownBox">
-    <p id="countdown">⏳ Please wait...</p>
+    <p id="countdown">⏳ Please wait.</p>
   </div>
 
   <div id="getLinkDiv" class="hidden">
-    <button onclick="openLink()">🔗 Open Link</button>
+    <button onclick="openLink()">Open Link</button>
   </div>
 
   <script>
@@ -82,14 +82,14 @@
       }
 
       document.getElementById("countdownBox").classList.remove("hidden");
-      document.getElementById("countdown").textContent = `⏳ Generating link, please wait ${countdown} seconds...`;
+      document.getElementById("countdown").textContent = `⏳ Generating link, please wait ${countdown} seconds.`;
 
       const timer = setInterval(() => {
         countdown--;
-        document.getElementById("countdown").textContent = `⏳ Generating link, please wait ${countdown} seconds...`;
+        document.getElementById("countdown").textContent = `⏳ Generating link, please wait ${countdown} seconds.`;
         if (countdown <= 0) {
           clearInterval(timer);
-          document.getElementById("countdown").textContent = '✅ Link ready!';
+          document.getElementById("countdown").textContent = 'Link ready!';
           document.getElementById("getLinkDiv").classList.remove("hidden");
         }
       }, 1000);
