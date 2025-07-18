@@ -1,10 +1,164 @@
-<main>
-    <header class="navbar">
-      <input type="text" value="" placeholder="Paste link here..." />
-      <button class="search" onclick="getMedia()">Get</button>
-    </header>
-    <section class="result">
-      <div class="image-placeholder"></div>
-      <p> Copy image or video link from Instagram and put it on the field given on the top. </p>
-   </section>
-  </main>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daunne Agro Farm</title>
+  <style>
+    body {
+      font-family: Roboto, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .center-box {
+      background-color: Darkgreen;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 8px;
+      border-radius: 8px;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 15px 0;
+    }
+
+    .image-container img {
+      max-width: 95%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .location {
+      font-size: 12px;
+      text-align: center;
+      margin-top: -10px;
+    }
+
+    .countdown-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    #countdown {
+      background-color: darkblue;
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
+    }
+
+    .getlink button {
+      background: darkblue;
+      color: white;
+      border: none;
+      padding: 0.6em 1.5em;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    section.result {
+      padding: 0 15px;
+      max-width: 800px;
+      margin: auto;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="center-box">
+    Daunne Agro Farm
+  </div>
+
+  <div class="image-container">
+    <img src="https://i.ibb.co/fzC2cw3N/IMG-20250718-122302.jpg" alt="Daunne Agro Image">
+  </div>
+
+  <div class="location">
+    <a href="https://maps.app.goo.gl/Htrgtq86ais2wU2a7" target="_blank" style="color: blue; text-decoration: underline;">
+      Daunne Agro Farm Ltd. – Nawalpur, Nepal
+    </a>
+  </div>
+
+  <section class="result" id="infoContent">
+    <p><strong>Introduction:</strong></p>
+    <p>Daunne Agro Farm Ltd. located in Sardi, Binayi Tribeni-3 Nawalpur stands today as one of Nepal’s leading poultry farms specializing in layer farming. Under the leadership of Binod Pokharel the farm has grown significantly in scale automation and impact. It plays a major role in the local and national egg supply chain and has recently moved toward public investment through an IPO.</p>
+
+    <!-- Centered Countdown + Get Link Button -->
+    <div class="countdown-container">
+      <div class="countdown" id="countdown"></div>
+    </div>
+
+    <p><strong>Establishment:</strong></p>
+    <p>Established in 2017. Daunne Agro Farm began with around 100,000 layer chickens. As of early 2025, the farm has expanded to a production capacity of over 400,000 chickens producing nearly 350,000 eggs daily. The management aims to increase this to 600,000 chickens soon making it one of the largest fully automated poultry farms in the country.</p>
+
+    <p><strong>Technology and Quality:</strong></p>
+    <p>The farm uses advanced automation technology imported from Germany and Malaysia. Feeding, lighting, egg collection and waste management systems are fully automated. Eggs are packaged under the “Daunne Happy Egg” brand commonly in 15 and 30-egg cartons, ensuring hygiene, uniformity, and market readiness.</p>
+
+    <p><strong>Financial Strategy:</strong></p>
+    <p>In a landmark step Daunne Agro Farm Ltd. has launched a Rs. 100 million Initial Public Offering (IPO) in collaboration with Citizens Capital Ltd. inviting public investment. The move aims to raise funds for further expansion, automation and regional distribution. The IPO marks a major transition from private to public participation in agri-based entrepreneurship in Nepal.</p>
+
+    <p><strong>Market Strategy:</strong></p>
+    <p>In Nepal, egg consumption drops during Shravan (a religious month) and rebounds in Bhadra. Responding to this trend, Daunne Agro alongside the Nepal Egg Producers Association set standard pricing in Bhadra 2081 at:</p>
+    <ul>
+      <li>Rs. 500 per crate (30 eggs)</li>
+      <li>Large eggs: Rs. 495</li>
+      <li>Medium eggs: Rs. 425</li>
+    </ul>
+
+    <p><strong>Industry Challenges:</strong></p>
+    <p>According to Pokharel over 75% of small poultry farmers in Nepal had to shut down temporarily due to losses in recent years. The egg production rate fell from 260,000–270,000 per day to around 230,000–240,000. Despite these industry-wide challenges Daunne Agro maintained operations helped stabilize supply and pushed for fair pricing to avoid market manipulation.</p>
+
+    <p><strong>Future Plans:</strong></p>
+    <p>Expand capacity to 600,000 chickens. Produce 600 cartons of eggs daily. Integrate ERP software and complete automation. Broaden brand visibility and national supply chain. Educate and employ locals in poultry tech and farm management.</p>
+        <div class="countdown-container">
+  <div class="getlink hidden" id="getLinkDiv">
+        <button onclick="window.location.href='movie.html'">Get Link</button>
+      </div>
+      </div>
+    <p><strong>Conclusion:</strong></p>
+    <p>Daunne Agro Farm Ltd. under Binod Pokharel’s leadership is more than just a poultry business—it is a symbol of modern agribusiness in Nepal. With bold steps like public investment, price regulation and automation. The farm is redefining what’s possible in rural entrepreneurship. Its contribution to food security, employment and innovation sets a benchmark for future agricultural ventures in Nepal.</p>
+  </section>
+
+  <script>
+    let countdown = 15;
+    const countdownEl = document.getElementById("countdown");
+    const getLinkDiv = document.getElementById("getLinkDiv");
+
+    window.onload = function () {
+      countdownEl.textContent = `⏳ Please wait ${countdown} seconds...`;
+      const timer = setInterval(() => {
+        countdown--;
+        countdownEl.textContent = `⏳ Please wait ${countdown} seconds...`;
+        if (countdown <= 0) {
+          clearInterval(timer);
+          countdownEl.textContent = '✅ Click the button below to continue';
+          getLinkDiv.classList.remove("hidden");
+        }
+      }, 1000);
+    };
+  </script>
+</body>
+</html>
