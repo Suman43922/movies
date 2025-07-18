@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Unlock</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .box {
+      background-color: #2196f3;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #00c853;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #getLinkDiv {
+      margin-top: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>🔐 Unlock Your Movie</h2>
+
+  <div class="box">
+    <p>🔑 Enter your key below:</p>
+    <input type="text" id="keyInput" placeholder="Paste your key here">
+    <button onclick="startCountdown()">Submit</button>
+  </div>
+
+  <div class="box hidden" id="countdownBox">
+    <p id="countdown">⏳ Please wait...</p>
+  </div>
+
+  <div id="getLinkDiv" class="hidden">
+    <button onclick="openLink()">🔗 Open Link</button>
+  </div>
+
+  <script>
+    let countdown = 5;
+    let userKey = "";
+
+    function startCountdown() {
+      userKey = document.getElementById("keyInput").value.trim();
+      if (!userKey) {
+        alert("❌ Please enter a valid key!");
+        return;
+      }
+
+      document.getElementById("countdownBox").classList.remove("hidden");
+      document.getElementById("countdown").textContent = `⏳ Generating link, please wait ${countdown} seconds...`;
+
+      const timer = setInterval(() => {
+        countdown--;
+        document.getElementById("countdown").textContent = `⏳ Generating link, please wait ${countdown} seconds...`;
+        if (countdown <= 0) {
+          clearInterval(timer);
+          document.getElementById("countdown").textContent = '✅ Link ready!';
+          document.getElementById("getLinkDiv").classList.remove("hidden");
+        }
+      }, 1000);
+    }
+
+    function openLink() {
+      const finalUrl = `https://t.me/Kandahubs18Bot?start=${userKey}`;
+      window.open(finalUrl, "_blank");
+    }
+  </script>
+</body>
+</html>
