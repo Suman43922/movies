@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src='//libtl.com/sdk.js' data-zone='9593532' data-sdk='show_9593532'></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Movie Unlock</title>
+  <title>Unlock Your Movie</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -14,14 +15,14 @@
     }
 
     .box {
-      background-color: #2196f3;
+      background-color: #696969;
       color: white;
-      padding: 15px;
-      border-radius: 10px;
+      padding: 20px;
+      border-radius: 15px;
       margin: 20px auto;
       width: 90%;
       max-width: 400px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
     }
 
     input {
@@ -35,7 +36,7 @@
 
     button {
       margin-top: 15px;
-      padding: 10px 20px;
+      padding: 10px 25px;
       font-size: 16px;
       background-color: #00c853;
       color: white;
@@ -44,60 +45,108 @@
       cursor: pointer;
     }
 
-    #getLinkDiv {
-      margin-top: 20px;
+    #cooldownBox {
+      display: none;
     }
 
-    .hidden {
-      display: none;
+    .circle {
+      border: 2px solid blue;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin: 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      color: #ffffff;
+    }
+
+    .cooldownBtn {
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      padding: 12px 30px;
+      font-size: 20px;
+      border-radius: 25px;
+      border: none;
+      cursor: not-allowed;
+    }
+
+    .cooldownBtn.ready {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h2>🔐 Unlock Your Movie</h2>
+  <h2>
+    <p style="font-size: 25px; color: red;">
+      ⚜️ <span style="text-decoration: underline;">Unlock Your Movie</span> ⚜️
+    </p>
+  </h2>
 
-  <div class="box">
-    <p>🔑 Enter your key below:</p>
-    <input type="text" id="keyInput" placeholder="Paste your key here">
-    <button onclick="startCountdown()">Submit</button>
+  <div class="box" id="keyBox">
+    <p>Enter your key below:</p>
+    <input type="text" id="keyInput" placeholder="Paste your key here" />
+    <button onclick="startCooldown()">Submit</button>
   </div>
 
-  <div class="box hidden" id="countdownBox">
-    <p id="countdown">⏳ Please wait.</p>
-  </div>
-
-  <div id="getLinkDiv" class="hidden">
-    <button onclick="openLink()">Open Link</button>
+  <div class="box" id="cooldownBox" style="display: none;">
+    <p>Your link is almost ready.</p>
+    <div class="circle" id="cooldownCircle">
+      <div>
+        <div id="countValue" style="font-size: 28px;">5</div>
+        <div style="font-size: 20px;">Seconds</div>
+      </div>
+    </div>
+    <button id="cooldownButton" class="cooldownBtn" disabled>Please Wait...</button>
   </div>
 
   <script>
     let countdown = 5;
     let userKey = "";
 
-    function startCountdown() {
+    function startCooldown() {
       userKey = document.getElementById("keyInput").value.trim();
       if (!userKey) {
         alert("❌ Please enter a valid key!");
         return;
       }
 
-      document.getElementById("countdownBox").classList.remove("hidden");
-      document.getElementById("countdown").textContent = `⏳ Please wait ${countdown} seconds.`;
+      document.getElementById("cooldownBox").style.display = "block";
+      document.getElementById("countValue").textContent = countdown;
 
-      const timer = setInterval(() => {
+      const btn = document.getElementById("cooldownButton");
+      btn.disabled = true;
+      btn.textContent = "Please Wait...";
+      btn.style.cursor = "not-allowed";
+
+      const interval = setInterval(() => {
         countdown--;
-        document.getElementById("countdown").textContent = `⏳ Please wait ${countdown} seconds.`;
+        document.getElementById("countValue").textContent = countdown;
+
         if (countdown <= 0) {
-          clearInterval(timer);
-          document.getElementById("countdown").textContent = 'Link ready!';
-          document.getElementById("getLinkDiv").classList.remove("hidden");
+          clearInterval(interval);
+          btn.textContent = "Open Link";
+          btn.classList.add("ready");
+          btn.disabled = false;
+          btn.style.cursor = "pointer";
+          btn.onclick = openLinkAfterAd;
         }
       }, 1000);
     }
 
-    function openLink() {
-      const finalUrl = `https://t.me/Kandahubs18Bot?start=${userKey}`;
-      window.open(finalUrl, "_blank");
+    function openLinkAfterAd() {
+      const url = `https://t.me/Kandahubs18Bot?start=${userKey}`;
+      show_9593532()
+        .then(() => {
+          window.open(url, "_blank");
+        })
+        .catch(() => {
+          alert("❌ Ad failed or blocked. Please try again.");
+        });
     }
   </script>
 </body>
