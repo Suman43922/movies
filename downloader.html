@@ -237,21 +237,6 @@
         });
     }
   }, 5000);
-  getLinkButton.onclick = function () {
-    if (adWatched) {
-      window.location.href = "movie.html";
-    } else {
-      show_9593532()
-        .then(() => {
-          localStorage.setItem("adWatched", "true");
-          adWatched = true;
-          window.location.href = "movie.html";
-        })
-        .catch(err => {
-          
-        });
-    }
-  };
 </script>
 </body>
 </html>
