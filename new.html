@@ -180,17 +180,13 @@
   };
 
   setTimeout(() => {
-    if (!adWatched) {
-      show_9593532()
-        .then(() => {
-          localStorage.setItem("adWatched", "true");
-          adWatched = true;
-        })
-        .catch(err => {
-          console.error('Error calling show_9593532:', err);
-        });
-    }
-  }, 5000);
+    show_9593532()
+.then(() => {
+})
+.catch(err => {
+console.error('Error calling show_9593532:', err);
+});
+}, 5000);
 </script>
 </body>
 </html>
