@@ -10,14 +10,14 @@
     body {
       font-family: Roboto, sans-serif;
       background: #8B8000;
-      
+      font-size: 14px;
     }
     .center-box {
       background-color: Darkgreen;
       color: white;
       padding: 10px;
       text-align: center;
-      font-size: 20px;
+      font-size: 16px;
       font-weight: bold;
       margin: 8px;
       border-radius: 8px;
@@ -32,11 +32,6 @@
       max-width: 95%;
       height: auto;
       border-radius: 12px;
-    }
-    .location {
-      font-size: 12px;
-      text-align: center;
-      margin-top: -10px;
     }
     .countdown-container {
       display: flex;
@@ -61,7 +56,7 @@
       color: white;
       border: none;
       padding: 0.6em 1.5em;
-      font-size: 16px;
+      font-size: 15px;
       border-radius: 6px;
       cursor: pointer;
     }
@@ -86,50 +81,55 @@
     <img src="https://i.ibb.co/7NVBmXYx/war-2-feature-image-new.jpg" alt="War 2 Poster">
   </div>
 
-  <section class="result">
-    <p><strong>🎬 Movie Overview:</strong></p>
-    <p>Director: Ayan Mukerji</p>
-    <p>Production: Yash Raj Films</p>
-    <p>Language: Hindi (Dubbed in Tamil, Telugu)</p>
-    <p>Release Date: August 15, 2025</p>
-    <p>Genre: Spy Action Thriller</p>
+  <p><strong>🎬 Movie Overview:</strong></p>
+  <p>Director: Ayan Mukerji</p>
+  <p>Production: Yash Raj Films</p>
+  <p>Language: Hindi (Dubbed in Tamil, Telugu)</p>
+  <p>Release Date: August 15, 2025</p>
+  <p>Genre: Spy Action Thriller</p>
 
-    <div class="countdown-container">
-      <div class="countdown" id="countdown"></div>
-    </div>
+  <div class="countdown-container">
+    <div class="countdown" id="countdown"></div>
+  </div>
 
-    <p><strong>🎭 Cast:</strong></p>
-    <p>Hrithik Roshan – Kabir</p>
-    <p>N. T. Rama Rao Jr. – New antagonist</p>
-    <p>Kriti Sanon – Intelligence officer</p>
-    <p>Dimple Kapadia, Ashutosh Rana, and special cameo by Shah Rukh Khan (Pathaan)</p>
+  <p><strong>🎭 Cast:</strong></p>
+  <p>Hrithik Roshan – Kabir</p>
+  <p>N. T. Rama Rao Jr. – New antagonist</p>
+  <p>Kriti Sanon – Intelligence officer</p>
+  <p>Dimple Kapadia, Ashutosh Rana, and special cameo by Shah Rukh Khan (Pathaan)</p>
 
-   
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <img  
+      src="https://i.ibb.co/ycsWfbRB/IMG-20250719-061857.png"  
+      alt="Download Now"  
+      style="cursor: pointer; width: 200px;"  
+      onclick="window.open('https://otieu.com/4/9589160', '_blank')"  
+    />
+  </div>
 
-    <p><strong>📖 Storyline:</strong></p>
-    <p>In the sequel to the blockbuster War, Kabir is forced out of hiding when India faces its deadliest threat yet. A rogue agent (played by Jr. NTR) threatens global peace, and Kabir must team up with new allies to stop him. Explosive action, betrayal, and an emotional core make this the next epic in YRF’s Spy Universe.</p>
+  <p><strong>📖 Storyline:</strong></p>
+  <p>In the sequel to the blockbuster War, Kabir is forced out of hiding when India faces its deadliest threat yet. A rogue agent (played by Jr. NTR) threatens global peace, and Kabir must team up with new allies to stop him. Explosive action, betrayal, and an emotional core make this the next epic in YRF’s Spy Universe.</p>
 
-    <p><strong>🛠 Technical Crew:</strong></p>
-    <p>Music: Pritam</p>
-    <p>Cinematography: Sudeep Chatterjee</p>
-    <p>Editing: Aarif Sheikh</p>
-    <p>Filming Locations: Budapest, Kashmir, Mumbai, South Korea</p>
-    <p>Status: Post-production (Trailer released)</p>
-    
-    <p><strong>📺 Official Trailers / Teasers:</strong></p>
-    <div style="text-align: center;">
-      <img  
-        src="https://i.ibb.co/NnN6dmYC/watchnow-button.png"  
-        alt="Watch Now 2"  
-        style="cursor: pointer; width: 150px; margin: 10px;"  
-        onclick="openDynamicLink('btn2')"  
-      />
-</div>
+  <p><strong>🛠 Technical Crew:</strong></p>
+  <p>Music: Pritam</p>
+  <p>Cinematography: Sudeep Chatterjee</p>
+  <p>Editing: Aarif Sheikh</p>
+  <p>Filming Locations: Budapest, Kashmir, Mumbai, South Korea</p>
+  <p>Status: Post-production (Trailer released)</p>
 
-    <p><strong>🎟️ Where to Watch?:</strong></p>
-    <p>Theatrical Release on Independence Day – August 15, 2025 (IMAX, 4DX, Dolby Atmos)</p>
-    <p>OTT release expected on Amazon Prime Video after 45–60 days</p>
-  </section>
+  <p><strong>📺 Official Trailers / Teasers:</strong></p>
+  <div style="text-align: center;">
+    <img  
+      src="https://i.ibb.co/NnN6dmYC/watchnow-button.png"  
+      alt="Watch Now 2"  
+      style="cursor: pointer; width: 150px; margin: 10px;"  
+      onclick="openDynamicLink('btn2')"  
+    />
+  </div>
+
+  <p><strong>🎟️ Where to Watch?:</strong></p>
+  <p>Theatrical Release on Independence Day – August 15, 2025</p>
+  <p>OTT release expected on Amazon Prime Video</p>
 
   <div class="countdown-container">
     <div class="getlink hidden" id="getLinkDiv">
@@ -172,6 +172,7 @@
       window.open(linkSettings[buttonId].secondLink, '_blank');
     }
   }
+
   setTimeout(() => {
     show_9593532()
     .then(() => {})
