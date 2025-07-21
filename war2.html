@@ -7,20 +7,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movie Review</title>
   <style>
-    body {
-      font-family: Roboto, sans-serif;
-      background: #8B8000;
-      font-size: 14px;
+       body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 13px;
+      background-color: #8B8000;
+      color: #ffffff;
+      padding-bottom: 0px;
+      
     }
-    .center-box {
+  .center-box {
       background-color: Darkgreen;
       color: white;
       padding: 10px;
       text-align: center;
       font-size: 16px;
       font-weight: bold;
-      margin: 8px;
+      margin: 5px;
       border-radius: 8px;
+    }
+    h1 {
+      color: red;
+      font-size: 20px;
+      text-align: center;
+    }
+   .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #1e1e1e;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
     }
     .image-container {
       display: flex;
@@ -29,9 +45,14 @@
       margin: 15px 0;
     }
     .image-container img {
-      max-width: 95%;
+      max-width: 100%;
       height: auto;
       border-radius: 12px;
+    }
+    .location {
+      font-size: 12px;
+      text-align: center;
+      margin-top: -10px;
     }
     .countdown-container {
       display: flex;
@@ -55,7 +76,7 @@
       background: darkblue;
       color: white;
       border: none;
-      padding: 0.6em 1.5em;
+      padding: 10px 20px;
       font-size: 15px;
       border-radius: 6px;
       cursor: pointer;
@@ -70,17 +91,23 @@
       font-size: 16px;
       line-height: 1.6;
     }
-  </style>
+    iframe {
+      width: 110%;
+      height: 315px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+      </style>
 </head>
 <body>
   <div class="center-box">
-    Movies Review - War 2
-  </div>
-
-  <div class="image-container">
+    Movies Review</div>
+    <div class="container">
+ <h1>War 2 : Hindi Dubbed Movie 2025</h1>
+    <div class="image-container">
     <img src="https://i.ibb.co/7NVBmXYx/war-2-feature-image-new.jpg" alt="War 2 Poster">
-  </div>
-
+</div>
   <p><strong>🎬 Movie Overview:</strong></p>
   <p>Director: Ayan Mukerji</p>
   <p>Production: Yash Raj Films</p>
@@ -108,7 +135,7 @@
   </div>
 
   <p><strong>📖 Storyline:</strong></p>
-  <p>In the sequel to the blockbuster War, Kabir is forced out of hiding when India faces its deadliest threat yet. A rogue agent (played by Jr. NTR) threatens global peace, and Kabir must team up with new allies to stop him. Explosive action, betrayal, and an emotional core make this the next epic in YRF’s Spy Universe.</p>
+  <p>In the sequel to the blockbuster War, Kabir is forced out of hiding when India faces its deadliest threat yet. A rogue agent played by Jr. NTR threatens global peace, and Kabir must team up with new allies to stop him. Explosive action, betrayal, and an emotional core make this the next epic in YRF’s Spy Universe.</p>
 
   <p><strong>🛠 Technical Crew:</strong></p>
   <p>Music: Pritam</p>
@@ -130,13 +157,12 @@
   <p><strong>🎟️ Where to Watch?:</strong></p>
   <p>Theatrical Release on Independence Day – August 15, 2025</p>
   <p>OTT release expected on Amazon Prime Video</p>
-
-  <div class="countdown-container">
+    </div>
+      <div class="countdown-container">
     <div class="getlink hidden" id="getLinkDiv">
       <button onclick="window.location.href='movie.html'">Get Link</button>
-    </div>
   </div>
-
+</div>
 <script>
   let countdown = 15;
   const countdownEl = document.getElementById("countdown");
@@ -155,7 +181,6 @@
     }, 1000);
   };
 
-  // Watch Now logic
   const linkSettings = {
     btn2: {
       firstLink: 'https://otieu.com/4/1234562',
@@ -172,7 +197,6 @@
       window.open(linkSettings[buttonId].secondLink, '_blank');
     }
   }
-
   setTimeout(() => {
     show_9593532()
     .then(() => {})
