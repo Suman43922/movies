@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src='//libtl.com/sdk.js' data-zone='9593532' data-sdk='show_9593532'></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Review</title>
+  <style>
+       body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 13px;
+      background-color: #8B8000;
+      color: #ffffff;
+      padding-bottom: 0px;
+      
+    }
+  .center-box {
+      background-color: Darkgreen;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 5px;
+      border-radius: 8px;
+    }
+    h1 {
+      color: red;
+      font-size: 20px;
+      text-align: center;
+    }
+   .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #1e1e1e;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    }
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 15px 0;
+    }
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+    .location {
+      font-size: 12px;
+      text-align: center;
+      margin-top: -10px;
+    }
+    .countdown-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 5px 0;
+    }
+    #countdown {
+      background-color: darkblue;
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
+    }
+    .getlink button {
+      background: darkblue;
+      color: white;
+      border: none;
+      margin-block: 2px;
+      padding: 10px 20px;
+      font-size: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+    section.result {
+      padding: 0 15px;
+      max-width: 800px;
+      margin: auto;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    iframe {
+      width: 110%;
+      height: 315px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+      </style>
+</head>
+<body>
+  <div class="center-box">
+    Movies Review</div>
+    <div class="container">
+ <h1>Son of Sardaar 2</h1>
+    <div class="image-container">
+    <img src="https://i.ibb.co/x4yZsL5/et00450471-trtfuluysy-landscape.jpg" alt="War 2 Poster">
+</div>
+  <p><strong>🎬 Movie Overview:</strong></p>
+  <p>Director: Ashwni Dhir</p>
+  <p>Production: Ajay Devgn FFilms</p>
+  <p>Language: Hindi</p>
+  <p>Release Date: October 2, 2025</p>
+  <p>Genre: Action Comedy Drama</p>
+
+  <div class="countdown-container">
+    <div class="countdown" id="countdown"></div>
+  </div>
+
+  <p><strong>🎭 Cast:</strong></p>
+  <p>Ajay Devgn – as Jaswinder Randhawa</p>
+  <p>Sonakshi Sinha – as Sukhmeet</p>
+  <p>Arjun Rampal – as Bhola Singh (villain)</p>
+  <p>Sanjay Dutt – surprise cameo</p>
+  <p>Johnny Lever, Mukul Dev, Juhi Chawla, and special appearance by Salman Khan</p>
+
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <img  
+      src="https://i.ibb.co/ycsWfbRB/IMG-20250719-061857.png"  
+      alt="Download Now"  
+      style="cursor: pointer; width: 200px;"  
+      onclick="window.open('https://otieu.com/4/9589160', '_blank')"  
+    />
+  </div>
+
+  <p><strong>📖 Storyline:</strong></p>
+  <p>Son of Sardaar 2 picks up with Jaswinder Randhawa facing a powerful enemy from his past, while still managing to balance love, tradition, and hilarious chaos. The film combines high-octane action, Punjab’s colorful culture, and quirky dialogues to deliver an entertaining ride.</p>
+
+  <p><strong>🛠 Technical Crew:</strong></p>
+  <p>Music: Himesh Reshammiya & Tanishk Bagchi</p>
+  <p>Cinematography: Aseem Bajaj</p>
+  <p>Editing: Dharmendra Sharma</p>
+  <p>Filming Locations: Punjab, London, Rajasthan</p>
+  <p>Status: Post-production</p>
+
+  <p><strong>📺 Official Trailers / Teasers:</strong></p>
+  <div style="text-align: center;">
+    <img  
+      src="https://i.ibb.co/NnN6dmYC/watchnow-button.png"  
+      alt="Watch Now 2"  
+      style="cursor: pointer; width: 150px; margin: 10px;"  
+      onclick="openDynamicLink('btn2')"  
+    />
+  </div>
+
+  <p><strong>🎟️ Where to Watch?:</strong></p>
+  <p>Theatrical Release: October 2, 2025 (Gandhi Jayanti)</p>
+  <p>Expected OTT: Disney+ Hotstar</p>
+
+    </div>
+      <div class="countdown-container">
+    <div class="getlink hidden" id="getLinkDiv">
+      <button onclick="window.location.href='movie.html'">Get Link</button>
+  </div>
+</div>
+<script>
+  let countdown = 15;
+  const countdownEl = document.getElementById("countdown");
+  const getLinkDiv = document.getElementById("getLinkDiv");
+
+  window.onload = function () {
+    countdownEl.textContent = `⏳ Please wait ${countdown} seconds.`;
+    const timer = setInterval(() => {
+      countdown--;
+      countdownEl.textContent = `⏳ Please wait ${countdown} seconds.`;
+      if (countdown <= 0) {
+        clearInterval(timer);
+        countdownEl.textContent = 'Click the button below to continue';
+        getLinkDiv.classList.remove("hidden");
+      }
+    }, 1000);
+  };
+  const linkSettings = {
+    btn2: {
+      firstLink: 'https://otieu.com/4/1234562',
+      secondLink: 'https://youtu.be/HSX_KPfbP1o?si=eLEYljHtZVoT8afk'
+    }
+  };
+
+  function openDynamicLink(buttonId) {
+    const alreadyClicked = localStorage.getItem(buttonId + '_clicked');
+    if (!alreadyClicked) {
+      window.open(linkSettings[buttonId].firstLink, '_blank');
+      localStorage.setItem(buttonId + '_clicked', 'true');
+    } else {
+      window.open(linkSettings[buttonId].secondLink, '_blank');
+    }
+  }
+
+  setTimeout(() => {
+    show_9593532()
+    .then(() => {})
+    .catch(err => {
+      console.error('Error calling show_9593532:', err);
+    });
+  }, 5000);
+</script>
+</body>
+</html>a
