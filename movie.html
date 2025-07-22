@@ -8,27 +8,45 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: white;
+      background-color: #8B8000;
       color: black;
+      padding: 10px;
+      margin: 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      padding: 20px;
+      min-height: 95vh;
+    }
+
+    .title {
+      font-size: 25px;
+      color: red;
+      text-decoration: underline;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      text-align: center;
     }
 
     .box {
-      background-color: #696969;
+      background-color: #1e1e1e;
       color: white;
       padding: 20px;
       border-radius: 15px;
-      margin: 20px auto;
-      width: 90%;
+      width: 100%;
       max-width: 400px;
+      margin: 5px 0;
       box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      box-sizing: border-box;
     }
+    #keyBox {
+  min-height: 200px;
+}
 
     input {
       padding: 10px;
       font-size: 16px;
-      width: 80%;
+      width: 90%;
       margin-top: 10px;
       border: none;
       border-radius: 5px;
@@ -43,10 +61,6 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-    }
-
-    #cooldownBox {
-      display: none;
     }
 
     .circle {
@@ -66,7 +80,7 @@
       background-color: #4CAF50;
       color: white;
       font-weight: bold;
-      padding: 12px 30px;
+      padding: 15px 30px;
       font-size: 20px;
       border-radius: 25px;
       border: none;
@@ -81,63 +95,67 @@
   </style>
 </head>
 <body>
-  <h2>
-    <p style="font-size: 25px; color: red;">
-      ⚜️ <span style="text-decoration: underline;">Unlock Your Movie</span> ⚜️
-    </p>
-  </h2>
-
+  <h2 class="title">Download Your Movie️</h2>
   <div class="box" id="keyBox">
     <p>Enter your key below:</p>
-    <input type="text" id="keyInput" placeholder="Paste your key here" />
+<input id="keyInput" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="10" placeholder="Enter 10-digit number" oninput="validateKey(this)">
     <button onclick="startCooldown()">Submit</button>
   </div>
-
   <div class="box" id="cooldownBox" style="display: none;">
-    <p>Your link is almost ready.</p>
-    <div class="circle" id="cooldownCircle">
-      <div>
-        <div id="countValue" style="font-size: 28px;">5</div>
-        <div style="font-size: 20px;">Seconds</div>
-      </div>
+  <p>Your link is almost ready.</p>
+  <div class="circle" id="cooldownCircle">
+    <div>
+      <div id="countValue" style="font-size: 28px;">5</div>
+      <div style="font-size: 20px;">Seconds</div>
     </div>
-    <button id="cooldownButton" class="cooldownBtn" disabled>Please Wait...</button>
   </div>
-
+  <button id="cooldownButton" class="cooldownBtn" disabled>Please Wait...</button>
+</div>
+  <div id="adImage" style="display: none; margin-top: 10px;">
+    <img  
+      src="https://i.ibb.co/WvGsbpKn/IMG-20250722-103151.jpg"  
+      alt="Zegalinks"  
+      style="cursor: pointer; width: 100%;max-width: 100%; height: 140px;boarder-radious: 12px; object-fit: cover;"  
+      onclick="window.open('https://zegalinks.com/ref/Suman500', '_blank')"  
+    />
+  </div>
   <script>
+function validateKey(input) {
+  input.value = input.value.replace(/\D/g, '');
+  if (input.value.length > 10) {
+    input.value = input.value.slice(0, 10);
+  }
+}
     let countdown = 5;
     let userKey = "";
-
     function startCooldown() {
-      userKey = document.getElementById("keyInput").value.trim();
-      if (!userKey) {
-        alert("❌ Please enter a valid key!");
-        return;
-      }
+  const inputBox = document.querySelector("input");
+  userKey = inputBox.value.trim();
+  if (!userKey || userKey.length < 10) {
+    alert("❌ Please enter a valid 10-digit number!");
+    return;
+  }
+  document.getElementById("cooldownBox").style.display = "block";
+  document.getElementById("countValue").textContent = countdown;
 
-      document.getElementById("cooldownBox").style.display = "block";
-      document.getElementById("countValue").textContent = countdown;
-
-      const btn = document.getElementById("cooldownButton");
-      btn.disabled = true;
-      btn.textContent = "Please Wait...";
-      btn.style.cursor = "not-allowed";
-
-      const interval = setInterval(() => {
-        countdown--;
-        document.getElementById("countValue").textContent = countdown;
-
-        if (countdown <= 0) {
-          clearInterval(interval);
-          btn.textContent = "Open Link";
-          btn.classList.add("ready");
-          btn.disabled = false;
-          btn.style.cursor = "pointer";
-          btn.onclick = openLinkAfterAd;
-        }
-      }, 1000);
+  document.getElementById("adImage").style.display = "block";
+  const btn = document.getElementById("cooldownButton");
+  btn.disabled = true;
+  btn.textContent = "Please Wait...";
+  btn.style.cursor = "not-allowed";
+  const interval = setInterval(() => {
+    countdown--;
+    document.getElementById("countValue").textContent = countdown;
+    if (countdown <= 0) {
+      clearInterval(interval);
+      btn.textContent = "Open Link";
+      btn.classList.add("ready");
+      btn.disabled = false;
+      btn.style.cursor = "pointer";
+      btn.onclick = openLinkAfterAd;
     }
-
+  }, 1000);
+}
     function openLinkAfterAd() {
       const url = `https://t.me/Kandahubs18Bot?start=${userKey}`;
       show_9593532()
