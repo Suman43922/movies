@@ -60,7 +60,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      margin: 25px 0;
+      margin: 5px 0;
     }
     #countdown {
       background-color: darkblue;
@@ -76,6 +76,7 @@
       background: darkblue;
       color: white;
       border: none;
+      margin-block: 2px;
       padding: 10px 20px;
       font-size: 15px;
       border-radius: 6px;
@@ -180,7 +181,6 @@
       }
     }, 1000);
   };
-
   const linkSettings = {
     btn2: {
       firstLink: 'https://otieu.com/4/1234562',
@@ -197,6 +197,7 @@
       window.open(linkSettings[buttonId].secondLink, '_blank');
     }
   }
+
   setTimeout(() => {
     show_9593532()
     .then(() => {})
